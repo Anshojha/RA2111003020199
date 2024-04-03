@@ -6,21 +6,24 @@ function ProductList() {
 
   useEffect(() => {
     // Fetch product data from the API
-    axios.get('/api/products')
+    axios.get('https://axesso-walmart-data-service.p.rapidapi.com/wlm/walmart-lookup-product')
       .then((response) => setProducts(response.data))
       .catch((error) => console.error('Error fetching products:', error));
   }, []);
 
   return (
     <div>
+    <h1>Products</h1>
+    <ul>
       {products.map((product) => (
-        <div key={product.id}>
-          {/* Display product details */}
-          <p>{product.name}</p>
-          {/* ... other product details */}
-        </div>
+        <li key={product.id}>
+            <Link to={`/products/${product.id}`}>
+            {product.name}
+          </Link>
+        </li>
       ))}
-    </div>
+    </ul>
+  </div>
   );
 }
 

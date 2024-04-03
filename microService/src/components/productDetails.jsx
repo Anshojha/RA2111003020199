@@ -19,10 +19,17 @@ function ProductDetails() {
 
   return (
     <div>
-      {/* Display detailed product information */}
-      <h2>{product.name}</h2>
-      {/* ... other product details */}
-    </div>
+    <h1>Product Detail</h1>
+    <ul>
+      <li>Name: {product.name}</li>
+      <li>Company: {product.company}</li>
+      <li>Category: {product.category}</li>
+      <li>Price: {product.price}</li>
+      <li>Rating: {product.rating}</li>
+      <li>Discount: {product.discount}</li>
+      <li>Availability: {product.availability}</li>
+    </ul>
+  </div>
   );
 }
 
